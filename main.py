@@ -86,7 +86,8 @@ def send_welcome(message):
     try:
         nk.signal_plot(signal)
         fig = plt.gcf()
-        fig.savefig("myfig.png")
+        fig.set_size_inches(14, 8)
+        fig.savefig("myfig.png", dpi=100)
 
         img = open('myfig.png', 'rb')
         bot.send_photo(message.chat.id, img, "График ЭКГ сигнала!😎",
